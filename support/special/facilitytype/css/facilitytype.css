@@ -65,7 +65,7 @@ h2 {
 
 h2 .service-name {
 	margin-right: 6px;
-	bottom: 7px;
+	bottom: 2px;
 	position: relative;
 }
 
@@ -630,7 +630,6 @@ header
 #merit .cv {
 	margin-top: 30px;
 }
-
 #merit h2.inview {
 	opacity: 0;
 	transform: translateY(100px);
@@ -854,6 +853,7 @@ header
 	z-index: 3;
 	left: 44px;
 }
+
 .swiper-slide:nth-of-type(1) .btn_job_entry a::before,
 .swiper-slide:nth-of-type(4) .btn_job_entry a::before {
 	background: right/ cover no-repeat url(/assets/images/support/special/facilitytype/job_illu01.svg);
@@ -933,7 +933,7 @@ header
 #service img {
 	width: 285px;
 	position: relative;
-	bottom: 2px;
+	bottom: 11px;
 }
 #service .table {
 	display: -ms-flexbox;
@@ -944,7 +944,6 @@ header
 #service .table .ttl {
 	width: 160px;
 	padding: 95px 0 16px 16px;
-	border: ;
 	/* border-right: none; */
 	/* border-radius: 5px 0 0 5px; */
 	background: #edeef0;
@@ -1003,15 +1002,9 @@ section .table .advrt {
 }
 #service .table .bb,
 #service .table .bb2 {
-	/* border-bottom: 12px solid #e97d44; */
 	height: 98px;
 	margin-bottom: 16px;
 	padding: 10px;
-}
-#service .table .bb2 {
-}
-#service .table .bb + li {
-	/* height: 164px; */
 }
 #service .table .ttl li {
 	font-size: 17px;
@@ -1023,18 +1016,11 @@ section .table .advrt {
 	margin-bottom: 16px;
 	height: 98px;
 }
-#service .table .ttl li:nth-child(2) {
-	/* background-image: url(/employer/img/ico_light_gr.png); */
-	/* background-position: 50% 46px; */
-	/* padding-top: 88px; */
-}
 #service .table .mynv .bb,
 #service .table .mynv .bb + li,
 #service .table .advrt .bb,
 #service .table .advrt .bb + li {
-	/* padding: 23px; */
 	font-size: 14px;
-	/* padding-top: 10px; */
 }
 
 #service .table li {
@@ -1070,14 +1056,31 @@ section .table .advrt {
 	content: url(/assets/images/support/special/facilitytype/cant.svg);
 }
 /*---------------------------- voice ---------------------------*/
+
 #voice {
 	position: relative;
+	background: bottom/ cover no-repeat url('/assets/images/support/special/facilitytype/voice_bg.jpg');
+	backdrop-filter: sepia(90%);
+	z-index: 0;
+}
+#voice::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -5px;
+	right: -5px;
+	background: #183d57a3;
+	z-index: -1;
 }
 #voice .user_voice_wrap {
 	background: #fff;
 }
 #voice .inner {
 	padding-bottom: 40px;
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
 }
 #voice .content_ttl h2 {
 	margin-bottom: 2em;
@@ -1095,6 +1098,20 @@ section .table .advrt {
 	position: relative;
 	padding-left: 70px;
 }
+#voice .swiper-container {
+	overflow: hidden;
+}
+#voice .voice-swiper {
+	overflow: inherit;
+}
+
+#voice .swiper-slide {
+	background: white;
+	height: 336px;
+	border-radius: 16px;
+	padding: 18px;
+	margin: 170px 0 120px;
+}
 .item {
 	background-color: #fcfaf6;
 	border: none;
@@ -1103,7 +1120,7 @@ section .table .advrt {
 }
 .main_menu_voice {
 	width: 100%;
-	padding: 70px 20px 0px;
+	padding: 56px 20px 0px;
 }
 .main_menu_voice .ttl_wrap {
 	width: 100%;
@@ -1122,10 +1139,14 @@ section .table .advrt {
 	right: 50%;
 	width: 100px;
 	height: 100px;
+	overflow: hidden;
 	transform: translate(-50%, 0);
 	-webkit-transform: translate(-50%, 0);
 	-ms-transform: translate(-50%, 0);
 	padding: 0;
+	background: white;
+	border-radius: 300px;
+	border: 4px orange solid;
 }
 #voice .pc_wrap ul::before,
 #voice .pc_wrap ul::after {
@@ -1725,7 +1746,6 @@ section .table .advrt {
 }
 
 /* dayservice */
-
 #dayservice #job .content_ttl::before {
 	content: '';
 	position: absolute;

@@ -1,44 +1,90 @@
+// show pagetop
+$('#page-top').hide();
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 500) {
+		$('#page-top').fadeIn(1000);
+	} else {
+		$('#page-top').fadeOut(300);
+	}
+});
+
+// show floating
+$('.floating').hide();
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 50) {
+		$('.floating').fadeIn(1000);
+	} else {
+		$('.floating').fadeOut(300);
+	}
+});
+
+// user_voice swiper-slide
 $(function () {
-	$('.inview').on('inview', function (event, isInView) {
-		if (isInView) {
-			$(this).addClass('inviewFade');
-		}
+	var swipervoice = new Swiper('.voice-container', {
+		loop: true,
+		slidesPerView: 1.5,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 3.5,
+				spaceBetween: 16,
+			},
+		},
 	});
 });
 
-$(function () {
-	//swiper 768以下で起動
-	var swiper;
-	$(window).on('load resize', function () {
-		var w = $(window).width();
-		if (w <= 768) {
-			if (swiper) {
-				return;
-			} else {
-				swiper = new Swiper('#job .swiper-container', {
-					loop: true,
+// job swiper-slide
+var scaleWindowW = function () {
+	var w = window.innerWidth || document.documentElement.clientWidth || 0;
+	return w;
+};
+window.addEventListener(
+	'DOMContentLoaded',
+	function () {
+		var swiperjob = undefined;
+		var swiperEl = document.querySelector('.job-container');
+		var swiperWrapper = document.getElementsByClassName('swiper-wrapper');
+		var swiperSlide = document.getElementsByClassName('swiper-slide');
+		var initSwiper = function () {
+			if (scaleWindowW() < 767 && swiperjob == undefined) {
+				swiperjob = new Swiper(swiperEl, {
+					loop: false,
 					pagination: {
 						el: '.swiper-pagination',
+						type: 'bullets',
 						clickable: true,
 					},
 					navigation: {
 						nextEl: '.swiper-button-next',
 						prevEl: '.swiper-button-prev',
 					},
-					scrollbar: {
-						el: '.swiper-scrollbar',
-					},
+					slidesPerView: 'auto',
+					centeredSlides: true,
 				});
+			} else if (scaleWindowW() >= 767 && swiperjob != undefined) {
+				swiperjob.destroy();
+				swiperjob = undefined;
+				for (var i = 0; i < swiperWrapper.length; i++) {
+					swiperWrapper[i].removeAttribute('style');
+				}
+				for (var i = 0; i < swiperSlide.length; i++) {
+					swiperSlide[i].removeAttribute('style');
+				}
 			}
-		} else {
-			if (swiper) {
-				swiper.destroy();
-				swiper = undefined;
-			}
-		}
-	});
-});
-
-$(function () {
-	$('.owl-carousel').owlCarousel();
-});
+		};
+		initSwiper();
+		window.addEventListener('resize', initSwiper);
+	},
+	false
+);
