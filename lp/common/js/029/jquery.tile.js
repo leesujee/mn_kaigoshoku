@@ -1,0 +1,1 @@
+!function(t){t.fn.tile=function(e){var h,i,n,r,o,u=this.length-1;return e||(e=this.length),this.each(function(){o=this.style,o.removeProperty&&o.removeProperty("height"),o.removeAttribute&&o.removeAttribute("height")}),this.each(function(o){n=o%e,0==n&&(h=[]),h[n]=t(this),r=h[n].height(),(0==n||r>i)&&(i=r),o!=u&&n!=e-1||t.each(h,function(){this.height(i)})})}}(jQuery);
