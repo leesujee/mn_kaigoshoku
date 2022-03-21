@@ -1,4 +1,4 @@
-// user_voice swiper-slide
+// voice swiper-slide
 $(function () {
 	var swipervoice = new Swiper('.voice-container', {
 		loop: true,
@@ -15,6 +15,8 @@ $(function () {
 		scrollbar: {
 			el: '.swiper-scrollbar',
 		},
+		centeredSlides: true,
+		spaceBetween: 20,
 		breakpoints: {
 			640: {
 				slidesPerView: 3.5,

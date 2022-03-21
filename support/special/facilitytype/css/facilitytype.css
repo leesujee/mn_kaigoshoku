@@ -53,7 +53,7 @@ h2 span {
 	position: relative;
 	bottom: 2px;
 	color: #00a4cd;
-	background: linear-gradient(#fff 50%, #fff 60%, #fff280 60%);
+	background: linear-gradient(#fff0 50%, #fff0 60%, #fff280 60%);
 }
 
 .btn:before {
@@ -386,7 +386,7 @@ header
 		width: 60vw;
 		bottom: 36px;
 		right: 0;
-		left: 155px;
+		left: 30vw;
 		height: 60vw;
 	}
 }
@@ -813,7 +813,7 @@ header
 }
 .triangle {
 	position: relative;
-	bottom: -7px;
+	bottom: -8px;
 }
 .triangle:after,
 #job::before {
@@ -821,7 +821,6 @@ header
 	position: absolute;
 }
 .triangle:after {
-	top: 100%;
 	right: 50%;
 	transform: translatex(50%);
 	box-sizing: border-box;
@@ -830,6 +829,7 @@ header
 	border-top: 84px solid transparent;
 	z-index: 2;
 	width: 100%;
+	/* bottom: 0px; */
 }
 #job::before {
 	bottom: 0;
@@ -1045,8 +1045,7 @@ header
 		padding-top: 4px;
 	}
 	.triangle:after {
-		bottom: 0;
-		top: -62px;
+		top: 103px;
 		border-right: calc(51vw - 10px) solid #edeef0;
 		border-left: calc(51vw - 10px) solid #edeef0;
 		border-top: 54px solid transparent;
@@ -1067,8 +1066,8 @@ header
 	bottom: -1px;
 	background: center / contain no-repeat url(/assets/images/support/special/facilitytype/service_illu_pc.png);
 	width: 846px;
-	left: 350px;
-	right: 50%;
+	left: 0;
+	right: 0;
 	margin: 0 auto;
 }
 #service h2 {
@@ -1175,6 +1174,9 @@ header
 	align-items: center;
 	justify-content: center;
 }
+#service .table ul li.sp {
+	display: none;
+}
 #service .best {
 	width: 40px;
 	height: 40px;
@@ -1240,12 +1242,16 @@ header
 		text-align: left;
 		padding: 0 16px;
 	}
+	#service .table ul li.sp,
+	#service .table .mynv .bb + li.sp {
+		display: block;
+		font-size: 2.6vw;
+	}
 }
 /*---------------------------- voice ---------------------------*/
-
 #voice {
 	position: relative;
-	background: bottom/ cover no-repeat url('/assets/images/support/special/facilitytype/voice_bg.jpg');
+	background: center 40% / cover no-repeat url('/assets/images/support/special/facilitytype/voice_bg.jpg');
 	backdrop-filter: sepia(90%);
 	z-index: 0;
 }
@@ -1333,7 +1339,6 @@ header
 	width: 100%;
 	text-align: center;
 }
-
 .main_menu_voice .img_wrap {
 	position: absolute;
 	top: -50px;
@@ -1360,7 +1365,6 @@ header
 	height: 100%;
 	background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
 }
-
 #voice .pc_wrap ul::before {
 	left: 0;
 	background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
@@ -1416,13 +1420,23 @@ header
 .front04 {
 	width: 87%;
 }
-
 .item__star-back,
 #voice .marker {
 	color: #ff9900;
 }
 #voice .marker {
 	font-weight: bold;
+}
+@media only screen and (max-width: 767px) {
+	#voice h2 {
+		padding-top: 105px;
+	}
+	#voice .inner {
+		width: 100%;
+	}
+	#voice .swiper-slide {
+		margin: 74px 0 18px;
+	}
 }
 /*---------------------------- flow ---------------------------*/
 #flow {
@@ -1462,12 +1476,6 @@ header
 #flow .step-list li:nth-child(1),
 #flow .step-list li:nth-child(4) {
 	margin-left: 0;
-}
-
-#flow .step-list li:nth-child(4),
-#flow .step-list li:nth-child(5),
-#flow .step-list li:nth-child(6) {
-	margin-bottom: 0;
 }
 .step-list li .number {
 	position: absolute;
@@ -1511,7 +1519,6 @@ header
 }
 #flow .step-list li .flow_sbttl {
 	color: #fb8e22;
-	display: table;
 	width: 100%;
 }
 .step-list li h3 {
@@ -1522,9 +1529,10 @@ header
 	text-align: center;
 	height: 65px;
 	position: relative;
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
 	line-height: 1.3;
+	padding-top: 11px;
 }
 .step-list li h3 span {
 	position: absolute;
@@ -1543,6 +1551,110 @@ header
 	padding: 0 16px;
 	color: #555;
 	text-align: left;
+}
+@media only screen and (max-width: 767px) {
+	#flow .step-list {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 59px;
+		margin-bottom: 0;
+	}
+	#flow .inner .content_ttl h2 {
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 60px;
+	}
+	#flow::after {
+		background-image: url(/assets/images/support/special/opening/bg_wave-bl_sp.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		top: -10px;
+	}
+	#flow {
+		margin-top: 0;
+		background: #d7f1ff;
+	}
+	#flow .pc_wrap {
+		width: 100%;
+		margin-bottom: 10%;
+	}
+	.step-list li {
+		height: auto;
+		border-radius: 10px;
+	}
+	.step-list li img {
+		width: 40%;
+		border-radius: 10px 0 10px 0;
+		margin-right: 10px;
+		padding-right: 0;
+	}
+	.step-list li .number {
+		background: #5ac9e5;
+	}
+	.step-list::after {
+		background-color: #5ac9e5;
+		left: 50.3%;
+	}
+	#flow .step-list .number {
+		font-size: 10px;
+		width: 64px;
+		height: 64px;
+	}
+	.step-list .wrap {
+		display: flex;
+		align-content: center;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.step-list li p {
+		padding-top: 10px;
+	}
+	.step-list li::after {
+		border-left: 3px solid #5ac9e5;
+		transform: rotate(359deg);
+		border-top: none;
+		border-right: none;
+		right: 0;
+		left: 48%;
+		bottom: -18px;
+		top: auto;
+		height: 18px;
+	}
+	.follow_btn .btn_sp a {
+		padding: 5%;
+	}
+	.follow_btn .main_txt {
+		width: 75%;
+		text-align: center;
+		font-size: 5vw;
+	}
+	.follow_btn .sub_txt {
+		width: 16%;
+		padding: 1% 2%;
+		font-size: 4vw;
+	}
+	#flow .step-list li {
+		height: auto;
+		min-height: 100%;
+		padding-bottom: 10px;
+		position: relative;
+		margin-left: 0;
+		width: 90%;
+	}
+	#flow .step-list li .flow_sbttl {
+		display: inline-block;
+		width: 56%;
+		height: auto;
+	}
+	.step-list li h3 {
+		display: block;
+		margin: 0;
+		text-align: center;
+	}
+	.step-list li:nth-child(3)::after {
+		display: block;
+	}
 }
 /*---------------------------- info ---------------------------*/
 
@@ -1626,6 +1738,42 @@ footer {
 	padding-right: 10px;
 	width: 62px;
 }
+@media only screen and (max-width: 767px) {
+	#info .contact .wrap {
+		width: 100%;
+		flex-direction: column-reverse;
+	}
+	#info .other .wrap {
+		width: 100%;
+		flex-direction: column;
+	}
+	#info .other .box {
+		width: 90%;
+		margin-bottom: 0;
+	}
+	#info .web,
+	#info .tel {
+		width: 80%;
+	}
+	#info .web {
+		margin-top: 65px;
+	}
+	#info .tel::before {
+		display: none;
+	}
+	#info .web::before {
+		position: absolute;
+		content: '';
+		left: 0;
+		height: 100%;
+		width: 100%;
+		bottom: 30px;
+		border-top: 0.5px solid #ffffff91;
+	}
+	#info .contact {
+		background: center / cover no-repeat url(/assets/images/support/special/facilitytype/info_bg_sp.png);
+	}
+}
 
 footer .inner {
 	display: flex;
@@ -1665,6 +1813,35 @@ footer .footer_link a:before {
 	position: absolute;
 	top: 2px;
 	left: -15px;
+}
+@media only screen and (max-width: 767px) {
+	footer {
+		padding-bottom: 110px;
+	}
+	footer .inner {
+		display: grid;
+		width: 100%;
+		align-items: end;
+		justify-content: center;
+		font-size: 12px;
+		padding: 32px;
+		grid-row-gap: 14px;
+	}
+	footer .txt_inner {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		width: 100%;
+	}
+	footer img {
+		grid-column-start: 1;
+		grid-row-start: 2;
+	}
+	footer .footer_right {
+		grid-column-start: 3;
+		grid-row-end: 2;
+		grid-row-start: 2;
+		grid-column-end: 4;
+	}
 }
 
 @media print, screen and (min-width: 375px) {
@@ -1868,17 +2045,6 @@ footer .footer_link a:before {
 	.opening-staff_merit ul li:last-child {
 		padding-right: 0;
 	}
-	/*---------------------------- joboffer ---------------------------*/
-
-	/*---------------------------- voice ---------------------------*/
-
-	#voice .main_menu_voice .img_wrap {
-		width: 22%;
-		top: 0;
-		right: 0;
-		left: 14%;
-		height: auto;
-	}
 	#voice .main_menu_voice .ttl_wrap {
 		padding-right: 0;
 	}
@@ -1904,71 +2070,6 @@ footer .footer_link a:before {
 		content: none;
 	}
 	/*---------------------------- flow ---------------------------*/
-	#flow h2 {
-		background-color: #d6f1ff;
-	}
-	#flow .inner .content_ttl h2 {
-		margin-bottom: 0;
-		font-size: 4.27vw;
-	}
-	#flow::after {
-		background-image: url(/assets/images/support/special/opening/bg_wave-bl_sp.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		top: -10px;
-	}
-	#flow {
-		margin-top: 0;
-		background-size: 45%;
-	}
-	#flow .pc_wrap {
-		width: 100%;
-		margin-bottom: 10%;
-	}
-	.step-list li {
-		height: auto;
-		border-radius: 10px;
-	}
-	.step-list li img {
-		width: 40%;
-		border-radius: 10px 0 10px 0;
-		margin-right: 10px;
-		padding-right: 0;
-	}
-	.step-list li .number {
-		background: #5ac9e5;
-	}
-	.step-list::after {
-		background-color: #5ac9e5;
-		left: 50.3%;
-	}
-
-	.opening-staff footer .inner {
-		padding: 0 0 20%;
-	}
-
-	.follow_btn .btn_sp a {
-		padding: 5%;
-	}
-	.follow_btn .main_txt {
-		width: 75%;
-		text-align: center;
-		font-size: 5vw;
-	}
-	.follow_btn .sub_txt {
-		width: 16%;
-		padding: 1% 2%;
-		font-size: 4vw;
-	}
-	#flow .step-list li .flow_sbttl {
-		display: inline-block;
-		width: 56%;
-	}
-	.step-list li h3 {
-		display: block;
-		margin: 0;
-		text-align: center;
-	}
 
 	.breadcrumb_wrap {
 		padding: 5px;
@@ -1989,10 +2090,11 @@ footer .footer_link a:before {
 		flex-wrap: wrap;
 		padding: 2% 2% 0;
 	}
-	.l-header_logo .u-hidden-u-md {
+	/* .l-header_logo .u-hidden-u-md {
 		display: none;
-	}
+	} */
 }
+
 @media only screen and (min-width: 768px) {
 	.jobofferlist .swiper-wrapper {
 		flex-wrap: wrap;
@@ -2129,5 +2231,12 @@ footer .footer_link a:before {
 		width: 100%;
 		background-position: center;
 		left: 0;
+	}
+	#dayservice #voice .content_ttl::before {
+		left: 26%;
+		top: 48px;
+		right: 50%;
+		width: 100%;
+		margin: 0 auto 100px;
 	}
 }
