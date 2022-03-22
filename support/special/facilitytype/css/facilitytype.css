@@ -1,3 +1,15 @@
+@charset 'utf-8';
+:root {
+	--dayservice: #ffdc4c;
+  --dayservice2: #FFF2C0;
+  --dayservice3:#00a4cd;
+  --grouphome:#FFCE95;
+  --grouphome2:#FFD8C0;
+  /* --grouphome3:; */
+  --paidnursing:#FFA7A3;
+  --paidnursing2:#FFE4E3;
+  --paidnursing3:#3E71BE;
+}
 .pc {
 	display: block;
 }
@@ -15,19 +27,9 @@
 a:hover {
 	text-decoration: none;
 }
-/* .l-wrapper {
-	padding-top: 54px;
-	border-top: 0;
-	background: none;
-} */
 header {
 	padding: 0;
 }
-/* .jobsearch_link {
-	margin: 40px 0 30px;
-	text-align: center;
-	text-decoration: underline;
-} */
 body {
 	padding: 0;
 	margin: 0 auto;
@@ -52,10 +54,7 @@ h2 span {
 .highlighter {
 	position: relative;
 	bottom: 2px;
-	color: #00a4cd;
-	background: linear-gradient(#fff0 50%, #fff0 60%, #fff280 60%);
 }
-
 .btn:before {
 	display: none;
 }
@@ -279,7 +278,7 @@ header
 	width: 390px;
 	height: 390px;
 	border-radius: 400px;
-	background: #fff2c0;
+
 }
 .main .main-inner {
 	position: relative;
@@ -289,7 +288,6 @@ header
 	z-index: 1;
 	color: #ffffff;
 	box-sizing: border-box;
-	background: #ffdc4c;
 	display: flex;
 	flex-direction: row;
 	width: 100%;
@@ -297,7 +295,64 @@ header
 	justify-content: center;
 	align-items: center;
 }
+.main .main-inner .copy {
+  position: relative;
+  color: #051a2b;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding: 0 28px;
+  margin: 0 auto;
+}
+.main .main-inner .copy,  
+.main .main-inner .title,
+.main .main-inner .register {
+  z-index: 6;
+}
 
+.main .main-inner .copy::before,
+.main .main-inner .copy::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -13px;
+  width: 19px;
+  height: 30px;
+  background: center /contain no-repeat url(/assets/images/support/special/facilitytype/mv_ttl_deco.svg);
+}
+
+.main .main-inner .copy::after {
+  transform: rotateY(180deg);
+  right: -3px;
+  left: auto;
+}
+
+.main .main-inner.inview .logo {
+	opacity: 0;
+	transform: translateX(50px);
+}
+.main .main-inner.inviewFade .copy,
+.main .main-inner.inviewFade .title,
+.main .main-inner.inviewFade .satisfied,
+.main .main-inner.inviewFade .main-btn {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 0.8s;
+}
+.main .main-inner.inviewFade .title {
+	transition-delay: 0.2s;
+}
+.main .main-inner.inviewFade .main-btn {
+	transition-delay: 0.6s;
+}
+.main .main-inner.inviewFade .logo {
+	opacity: 1;
+	transform: translateX(0);
+	transition: 0.8s;
+	transition-delay: 0.8s;
+}
 .mv-title {
 	display: flex;
 	flex-direction: column;
@@ -307,6 +362,58 @@ header
 	padding-right: 51px;
 	top: 20px;
 }
+
+@media only screen and (max-width: 767px) {
+	.main {
+		min-height: 1px;
+		background: url(/assets/images/support/kaigofukushi/main_bg_sp.jpg) center top no-repeat;
+		background-size: 100%;
+		height: 596px;
+	}
+	.main .main-inner {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: auto;
+		padding-top: 14px;
+	}
+	.main .main-inner .logo {
+		padding-top: 6.96%;
+		right: 2.84%;
+		width: 19.89%;
+	}
+	.main .main-inner .copy {
+		width: fit-content;
+		display: flex;
+		justify-content: center;
+		padding: 0 22px;
+	}
+	.main .main-inner .title {
+		margin: 17px 0;
+		width: 100%;
+	}
+	.main .main-inner .satisfied {
+		margin-bottom: 8%;
+		padding-left: 2.27%;
+		width: 58.52%;
+	}
+	.main .main-inner .main-btn {
+		margin-left: 0;
+		width: 94%;
+	}
+	.mv-title {
+		align-items: center;
+		padding-right: 0;
+		height: auto;
+	}
+	.mv-title .register {
+		width: 100%;
+	}
+}
+
+
+
 
 .header-image-inner {
 	height: 166px;
@@ -328,26 +435,27 @@ header
 	width: 343px;
 	height: 354px;
 	z-index: 4;
-	background-image: url(/assets/images/support/special/facilitytype/img_header_02.png);
+  background-size: contain;
 	background-repeat: no-repeat;
 	left: 24px;
 	bottom: 168px;
 }
 .header-day03 {
 	position: absolute;
-	top: -68px;
-	right: -189px;
-	z-index: 3;
-	bottom: 20px;
 	width: 269px;
 	height: 286px;
-	background-image: url(/assets/images/support/special/facilitytype/img_header_03.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+	top: -68px;
+	right: -189px;
+	bottom: 20px;
+	z-index: 3;
 }
 .header-day04 {
 	z-index: 3;
 	top: -53px;
 	left: -10px;
-	width: 185px;
+	width: 186px;
 	height: 170px;
 	background: url(/assets/images/support/special/facilitytype/img_header_04.png) no-repeat;
 	position: absolute;
@@ -407,7 +515,6 @@ header
 	right: -6px;
 	width: 2px;
 	height: 19px;
-	background: #ffdc4c;
 	border-radius: 8px;
 }
 .localNav li:last-child::after {
@@ -438,7 +545,6 @@ header
 	left: 50%;
 }
 .localNav a:hover {
-	background-color: #ffdc4c;
 	transform: scale(1.2);
 	text-decoration: none;
 	border-radius: 10px;
@@ -477,85 +583,6 @@ header
 		font-size: 20px;
 	}
 }
-.main .main-inner.inview .copy,
-.main .main-inner.inview .title,
-.main .main-inner.inview .satisfied,
-.main .main-inner.inview .main-btn {
-	opacity: 0;
-	transform: translateY(50px);
-}
-.main .main-inner.inview .logo {
-	opacity: 0;
-	transform: translateX(50px);
-}
-.main .main-inner.inviewFade .copy,
-.main .main-inner.inviewFade .title,
-.main .main-inner.inviewFade .satisfied,
-.main .main-inner.inviewFade .main-btn {
-	opacity: 1;
-	transform: translateY(0);
-	transition: 0.8s;
-}
-.main .main-inner.inviewFade .title {
-	transition-delay: 0.2s;
-}
-.main .main-inner.inviewFade .main-btn {
-	transition-delay: 0.6s;
-}
-.main .main-inner.inviewFade .logo {
-	opacity: 1;
-	transform: translateX(0);
-	transition: 0.8s;
-	transition-delay: 0.8s;
-}
-@media only screen and (max-width: 767px) {
-	.main {
-		/* margin-bottom: 4.53%; */
-		min-height: 1px;
-		background: url(/assets/images/support/kaigofukushi/main_bg_sp.jpg) center top no-repeat;
-		background-size: 100%;
-		height: 596px;
-	}
-	.main .main-inner {
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		height: auto;
-		padding-top: 14px;
-	}
-	.main .main-inner .logo {
-		padding-top: 6.96%;
-		right: 2.84%;
-		width: 19.89%;
-	}
-	.main .main-inner .copy {
-		/* padding-left: 2.27%; */
-		width: 100%;
-	}
-	.main .main-inner .title {
-		margin: 17px 0;
-		/* padding-left: 2.27%; */
-		width: 100%;
-	}
-	.main .main-inner .satisfied {
-		margin-bottom: 8%;
-		padding-left: 2.27%;
-		width: 58.52%;
-	}
-	.main .main-inner .main-btn {
-		margin-left: 0;
-		width: 94%;
-	}
-	.mv-title {
-		align-items: center;
-		padding-right: 0;
-		height: auto;
-	}
-	.mv-title .register {
-		width: 100%;
-	}
-}
 
 /* summary
 ---------------------------------------------------------------------------- */
@@ -566,7 +593,6 @@ header
 	position: relative;
 	justify-content: flex-start;
 	margin-top: 80px;
-	background: #fff2c0;
 	border-radius: 20px;
 	align-items: center;
 	height: 210px;
@@ -642,8 +668,7 @@ header
 }
 #merit .merit-item {
 	border-radius: 10px;
-	border: 11px solid #fff2c0;
-	width: 31.26%; /* 302 */
+	width: 31.26%; 
 	background-color: #fff;
 	display: flex;
 	align-items: center;
@@ -670,15 +695,13 @@ header
 	position: absolute;
 	font-size: 14px;
 	letter-spacing: 1px;
-	color: #1daed3;
 	bottom: -7px;
 	font-weight: 400;
 	right: 0;
 	left: 0;
 }
 #merit .merit-item h3 span {
-	color: #00a4cd;
-	font-weight: 600;
+ 	font-weight: 600;
 }
 #merit .merit-item img {
 	margin: 0 auto;
@@ -688,7 +711,6 @@ header
 }
 #merit .merit-item p {
 	line-height: 1.75;
-	/* font-size: 16px; */
 	text-align: left;
 }
 #merit .merit-item .second {
@@ -725,7 +747,9 @@ header
 #merit .inviewFade .merit-item:nth-child(3) {
 	transition-delay: 0.5s;
 }
-#merit .register {
+#merit .register,
+#service .register
+ {
 	width: 800px;
 	background: 158px 14px / 483px no-repeat url(/assets/images/support/special/facilitytype/register_bg.png);
 	margin: 0 auto;
@@ -784,12 +808,11 @@ header
 	}
 }
 
-/*---------------------------- joboffer ---------------------------*/
+/*---------------------------- job ---------------------------*/
 
 #job {
 	position: relative;
 	width: 100%;
-	background-color: #ffdc4c;
 	padding-bottom: 91px;
 }
 #job h2 {
@@ -977,9 +1000,7 @@ header
 	font-size: 140%;
 	padding-left: 4px;
 }
-#job .highlighter {
-	background: linear-gradient(#fff0 50%, #fff0 60%, #9fe7ff 60%);
-}
+
 
 @media only screen and (max-width: 767px) {
 	#job {
@@ -992,7 +1013,6 @@ header
 		background-size: 134px;
 		background-position: 31% bottom, 68% bottom;
 	}
-
 	.salary::before {
 		width: 24px;
 		height: 27px;
@@ -1000,12 +1020,9 @@ header
 		left: -2px;
 		top: 11px;
 	}
-
 	#job .content_ttl {
-		/* font-size: 4.27vw; */
 		width: 100%;
 	}
-
 	#job .inner {
 		overflow: hidden;
 	}
@@ -1014,9 +1031,6 @@ header
 		margin-right: 1%;
 		height: auto;
 		margin-bottom: 0;
-	}
-	#job .jobofferlist .swiper-container {
-		/* padding: 0 0 50px 0; */
 	}
 	#job .jobofferlist .swiper-pagination-bullet-active {
 		color: rgba(219, 36, 31, 0.9);
@@ -1090,6 +1104,16 @@ header
 	padding: 95px 0 16px 16px;
 	background: #edeef0;
 	height: 784px;
+	position: relative;
+}
+#service .table .ttl::after {
+	content: '';
+	position: absolute;
+	width: 164px;
+	height: 151px;
+	background: center / contain no-repeat url(/assets/images/support/special/facilitytype/service_illust.png);
+	top: -68px;
+	left: -6px;
 }
 #service .table .mynv,
 #service .table .advrt {
@@ -1207,6 +1231,9 @@ header
 		margin-top: 0;
 		padding-bottom: 130px;
 	}
+	#service .register {
+		width: 100%;
+	}
 	#service .table .ttl {
 		display: none;
 	}
@@ -1261,8 +1288,8 @@ header
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: -5px;
-	right: -5px;
+	left: 0;
+	right: 0;
 	background: #183d57a3;
 	z-index: -1;
 }
@@ -1871,7 +1898,6 @@ footer .footer_link a:before {
 
 	.hero {
 		text-align: center;
-		/*padding-top: 0;*/
 	}
 	.hero--kyuryo {
 		background-color: #fff5ec;
@@ -2203,8 +2229,41 @@ footer .footer_link a:before {
 }
 
 /* dayservice */
+#dayservice .main .main-inner,
+#dayservice .localNav a:hover,
+#dayservice.localNav li::after,
+#dayservice #job {
+	background: var(--dayservice);
+}
+#dayservice .main::before,
+#dayservice .summary {
+	background: var(--dayservice2);
+}
+#dayservice #merit .merit-item {
+border: 11px solid var(--dayservice2);
+}
+#dayservice .highlighter {
+	color: var(--dayservice3);
+	background: linear-gradient(#fff0 50%, #fff0 60%, var(--dayservice) 60%);
+}
+#dayservice #job .highlighter {
+  color: #444;
+background: linear-gradient(#fff0 50%, #fff0 60%, #9fe7ff 60%);
+}
+#dayservice #merit .merit-item h3::before {
+  color: var(--dayservice3);
+}
+#dayservice #merit .merit-item h3 span  {
+	color: var(--dayservice3);
+}
+#dayservice .header-day02 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_02.png);
+}
+#dayservice .header-day03 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_03.png);
+}
 #dayservice .localNav li::after {
-	border: solid 1px #ffdc4c;
+	border: solid 1px var(--dayservice);
 }
 #dayservice #job .content_ttl::before,
 #dayservice #voice .content_ttl::before {
@@ -2225,7 +2284,6 @@ footer .footer_link a:before {
 	top: 86px;
 	left: 395px;
 }
-
 @media only screen and (max-width: 767px) {
 	#dayservice #job .content_ttl::before {
 		width: 100%;
@@ -2233,6 +2291,210 @@ footer .footer_link a:before {
 		left: 0;
 	}
 	#dayservice #voice .content_ttl::before {
+		left: 26%;
+		top: 48px;
+		right: 50%;
+		width: 100%;
+		margin: 0 auto 100px;
+	}
+}
+/* grouphome */
+#grouphome .main .main-inner,
+#grouphome .localNav a:hover,
+#grouphome.localNav li::after,
+#grouphome #job {
+	background: var(--grouphome);
+}
+#grouphome .main::before{
+background: var(--dayservice2);
+}
+#grouphome .header-day01 {
+  bottom: -152px;
+ }
+#grouphome .summary{
+  	background: var(--grouphome2);
+}
+#grouphome .summary-image {
+  width: 198px;
+}
+#grouphome #merit .merit-item {
+border: 11px solid var(--grouphome2);
+}
+#grouphome .highlighter {
+	color: #3E71BE;
+	background: linear-gradient(#fff0 50%, #fff0 60%, var(--grouphome) 60%);
+}
+#grouphome #job .highlighter {
+ color: #444;
+background: linear-gradient(#fff0 50%, #fff0 60%, #9fe7ff 60%);
+}
+#grouphome .header-day02 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_02_grouphome.png);
+}
+#grouphome .header-day03 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_03_grouphome.png);
+}
+#grouphome .localNav li::after {
+	border: solid 1px var(--grouphome);
+}
+#grouphome #job .content_ttl::before,
+#grouphome #voice .content_ttl::before {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 96px;
+	right: 0;
+	width: 237px;
+	height: 42px;
+	background: url(/assets/images/support/special/facilitytype/grouphome_ttl.svg) no-repeat;
+	left: 285px;
+}
+#grouphome #voice .content_ttl::before {
+	width: 211px;
+	height: 40px;
+	background: url(/assets/images/support/special/facilitytype/grouphome_ttl_invert.svg) no-repeat;
+	top: 86px;
+	left: 395px;
+}
+#grouphome h2 .service-name{
+bottom: 7px;
+}
+#grouphome #merit .merit-item .second {
+height: 328px;
+}
+@media only screen and (max-width: 767px) {
+	#grouphome #job .content_ttl::before {
+		width: 100%;
+		background-position: center;
+		left: 0;
+	}
+	#grouphome #voice .content_ttl::before {
+		left: 26%;
+		top: 48px;
+		right: 50%;
+		width: 100%;
+		margin: 0 auto 100px;
+	}
+}
+
+/* 有料老人ホーム */
+
+#paidnursing .mv-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 305px;
+    position: absolute;
+    padding-right: 51px;
+    top: 81px;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    z-index: 999;
+}
+#paidnursing .mv-title::before{
+  position: absolute;
+  content: "";
+  background: center / contain no-repeat url(/assets/images/support/special/facilitytype/main_title_grouphome_deco.png);
+  width: 520px;
+  height: 340px;
+  margin: 0 auto;
+  z-index: 5;
+  left: -50px;
+  right: 0;
+  bottom: 12.1px;
+}
+#paidnursing  .header-image-inner{
+      width: 800px;
+      margin: 0 auto;
+      /* text-align: center; */
+}
+
+#paidnursing .main .main-inner,
+#paidnursing .localNav a:hover,
+#paidnursing.localNav li::after,
+#paidnursing #job {
+	background: var(--paidnursing);
+	padding-top: 0;
+}
+#paidnursing .main::before{background: var(--paidnursing2);width: 300px;height: 300px;}
+#paidnursing .header-day01 {
+  bottom: -252px;
+  right: -72px;
+ }
+#paidnursing .summary{
+  	background: var(--paidnursing2);
+}
+#paidnursing .summary-image {
+  width: 198px;
+}
+#paidnursing #merit .merit-item {
+border: 11px solid var(--paidnursing2);
+}
+#paidnursing .highlighter {
+	color: #3E71BE;
+	background: linear-gradient(#fff0 50%, #fff0 60%, var(--paidnursing) 60%);
+}
+#paidnursing #job .highlighter {
+ color: #444;
+background: linear-gradient(#fff0 50%, #fff0 60%, #9fe7ff 60%);
+}
+#paidnursing .header-day02 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_02_paidnursing.png);
+	left: -60px;
+	bottom: 122px;
+	width: 320px;
+}
+#paidnursing .header-day03 {
+	background-image: url(/assets/images/support/special/facilitytype/img_header_03_paidnursing.png);
+	right: -35px;
+	top: 50px;
+	width: 350px;
+	height: 340px;
+}
+
+#paidnursing .header-day04 {
+  width: 150px;
+  background-size: contain;
+  top: 16px;
+  left: -70px;
+  opacity: 0.6;
+}
+#paidnursing .localNav li::after {
+	border: solid 1px var(--paidnursing);
+}
+#paidnursing #job .content_ttl::before,
+#paidnursing #voice .content_ttl::before {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 96px;
+	right: 0;
+	width: 237px;
+	height: 42px;
+	background: url(/assets/images/support/special/facilitytype/paidnursing_ttl.svg) no-repeat;
+	left: 285px;
+}
+#paidnursing #voice .content_ttl::before {
+	width: 211px;
+	height: 40px;
+	background: url(/assets/images/support/special/facilitytype/paidnursing_ttl_invert.svg) no-repeat;
+	top: 86px;
+	left: 395px;
+}
+#paidnursing h2 .service-name{
+bottom: 7px;
+}
+#paidnursing #merit .merit-item .second {
+height: 328px;
+}
+@media only screen and (max-width: 767px) {
+	#paidnursing #job .content_ttl::before {
+		width: 100%;
+		background-position: center;
+		left: 0;
+	}
+	#paidnursing #voice .content_ttl::before {
 		left: 26%;
 		top: 48px;
 		right: 50%;
